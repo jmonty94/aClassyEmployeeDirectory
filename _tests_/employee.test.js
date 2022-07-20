@@ -2,19 +2,26 @@ const Employee = require("../lib/Employee");
 
 describe("Employee", () => {
     describe("Init", () => {
-        it("Should return an object containing a 'name', 'id', and 'email' property when called with the 'new' keyword", () => {
+        it(`Employee instance should have a "name" property of James`, () => {
             const name = "James";
             const id = 1;
             const email = "anon@gmail.com";
-            const newEmployee = new Employee(name, id, email);
-            expect("name" in newEmployee && "id" in newEmployee && "email" in newEmployee).toEqual(true);
+            const employee = new Employee(name, id, email);
+            expect(employee.name).toEqual(name);
         });
-        it('Should have a properties that are equal to the arguments that were passed in', () => {
+        it(`Employee instance should have a "id" property of 1`, () => {
             const name = "James";
             const id = 1;
             const email = "anon@gmail.com";
-            const result = new Employee(name, id, email);
-            expect(result.name && result.id && result.email).toEqual(name && id && email);
+            const employee = new Employee(name, id, email);
+            expect(employee.id).toEqual(id);
+        });
+        it(`Employee instance should have a "email" property of "anon@gmail.com"`, () => {
+            const name = "James";
+            const id = 1;
+            const email = "anon@gmail.com";
+            const employee = new Employee(name, id, email);
+            expect(employee.email).toEqual(email);
         });
         it("Should throw an error if a valid name was not provided", () => {
             const name = null || " " || 4;
@@ -41,4 +48,11 @@ describe("Employee", () => {
             expect(callbackFn).toThrowError(expectedError);
         });
     });
+    describe("getName Method", () => {
+        it("Should get the current Employee object's 'name' property", () => {
+            const employeeObj = new Employee("James", 1, "anon@gmail.com")
+
+
+        })
+    })
 });
