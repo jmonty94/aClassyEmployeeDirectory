@@ -12,8 +12,8 @@ describe(`Engineer`, () => {
             expect(newEngineer.github).toEqual("jmonty94");
         });
         it(`Should throw an Error if a valid input for "github" property is not provided`, () => {
-            const github = " ";
-            const callbackFn = () => new Manager("James", 1, "anon@anon.com", github);
+            const github = "";
+            const callbackFn = () => new Engineer("James", 1, "anon@anon.com", github);
             const expectedError = 'github must be a string and not empty';
             expect(callbackFn).toThrow(expectedError);
         });
