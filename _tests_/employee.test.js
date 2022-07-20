@@ -78,4 +78,11 @@ describe("Employee", () => {
             expect(result).toEqual(email);
         });
     });
+    describe("getRole Method", () => {
+        it(`Should return the default role of "Employee"`, () => {
+            const newEmployee = new Employee("James", 1, "anon@gmail.com")
+            const result = newEmployee.getRole()
+            expect(result).toEqual('Employee')
+        })
+    })
 });
