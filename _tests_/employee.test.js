@@ -49,10 +49,33 @@ describe("Employee", () => {
         });
     });
     describe("getName Method", () => {
-        it("Should get the current Employee object's 'name' property", () => {
-            const employeeObj = new Employee("James", 1, "anon@gmail.com")
-
-
-        })
-    })
+        it("The getName method should get the Employee instance's 'name' property", () => {
+            const name = "James";
+            const id = 1;
+            const email = "anon@gmail.com";
+            const employeeObj = new Employee(name, id, email);
+            const result = employeeObj.getName();
+            expect(result).toEqual(name);
+        });
+    });
+    describe("getId Method", () => {
+        it("getID method should get the Employee instance's 'id' property", () => {
+            const name = "James";
+            const id = 1;
+            const email = "anon@gmail.com";
+            const employeeObj = new Employee(name, id, email);
+            const result = employeeObj.getId();
+            expect(result).toEqual(id);
+        });
+    });
+    describe("getEmail Method", () => {
+        it("getEmail method should get the Employee instance's 'email' property", () => {
+            const name = "James";
+            const id = 1;
+            const email = "anon@gmail.com";
+            const employeeObj = new Employee(name, id, email);
+            const result = employeeObj.getEmail();
+            expect(result).toEqual(email);
+        });
+    });
 });
