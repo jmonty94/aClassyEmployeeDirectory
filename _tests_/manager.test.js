@@ -19,7 +19,7 @@ describe(`Manager`, () => {
         });
     });
     describe(`getOfficeNumber method`, () => {
-        it(`Should return the "officeNumber" properties value`, () => {
+        it(`Should return the "officeNumber" property's value`, () => {
             const newManager = new Manager("James", 1, "anon@anon.com", 48);
             const result = newManager.getOfficeNumber();
             expect(result).toEqual(newManager.officeNumber);
@@ -28,9 +28,9 @@ describe(`Manager`, () => {
     describe(`getRole method`, () => {
         it(`Should return the "role" property with a value of "Manager"`, () => {
             const newManager = new Manager("James", 1, "anon@anon.com", 48);
-            const result = newManager.getRole()
-            expect(result).toEqual("Manager")
+            const result = newManager.getRole();
+            expect(result).toEqual("Manager");
 
-        })
-    })
-})
+        });
+    });
+});
