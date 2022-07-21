@@ -34,3 +34,24 @@ let employeeDirectoryHtml = `
     </header>
     <main class="container-fuid">
 `;
+const addTeamMember = function (data) {
+    let roleSpecific = ``;
+    let roleIcon = ``
+    if (data.getRole() === `Manager`) {
+
+    }
+    let cardContent =
+        `
+    <div class="card text-center">
+        <div class="card-header">${roleIcon}${data.getRole()}</div>
+        <div class="card-body">
+            <h5 class="card-title>${data.name}</h5>
+            <ul class="list-group list-group-light list-group-small">
+                <li class="list-group-item px-4">Employee ID: ${data.id}</li>
+                <li class="list-group-item px-4">Employee Email: ${data.email}</li>
+                <li class="list-group-item px-4">${roleSpecific}</li>
+            </ul>
+        </div>
+    </div>
+    `
+}
