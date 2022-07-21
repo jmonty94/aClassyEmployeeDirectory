@@ -1,5 +1,5 @@
-const Employee = require("../lib/Employee");
-const Engineer = require("../lib/Engineer")
+import {Employee} from "../lib/Employee.js";
+import {Engineer} from "../lib/Engineer.js";
 
 describe(`Engineer`, () => {
     describe(`Init`, () => {

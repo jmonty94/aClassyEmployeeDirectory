@@ -1,4 +1,4 @@
-const Employee = require("../lib/Employee");
+import {Employee} from "../lib/Employee.js";
 
 describe("Employee", () => {
     describe("Init", () => {
