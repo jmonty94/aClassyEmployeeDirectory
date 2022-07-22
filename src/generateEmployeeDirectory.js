@@ -17,10 +17,7 @@ let employeeDirectoryHtml = `
 </head>
 <body>
     <header>
-        <div class="p-5 text-center bg-image" style="
-            background-image: url('https://images.pexels.com/photos/268533/pexels-photo-268533.jpeg');
-            height: 400px;
-          ">
+        <div class="p-5 text-center bg-image" style="background-image: url('https://images.pexels.com/photos/268533/pexels-photo-268533.jpeg');height: 400px;">
             <div class="mask" style="background-color: rgba(0, 0, 0, 0.6);">
                 <div class="d-flex justify-content-center align-items-center h-100">
                     <div class="text-white">
@@ -31,7 +28,7 @@ let employeeDirectoryHtml = `
         </div>
     </header>
     <main class="container-fuid d-flex">
-`;
+        <div class="row justify-content-center">`;
 const addTeamMember = function (data) {
     let roleSpecific = ``;
     let roleIcon = ``
@@ -39,7 +36,7 @@ const addTeamMember = function (data) {
         roleSpecific = `<i class="fas fa-building"></i> Office Number: ${data.officeNumber}`;
         roleIcon =`<i class="fas fa-chalkboard-teacher"></i>`;
     } else if (data.getRole() === `Engineer`) {
-        roleSpecific = `<i class="fab fa-github"></i> GitHub profile page : <a href="https://github.com/${data.github}" target="_blank">${data.github}</a>`;
+        roleSpecific = `<i class="fab fa-github"></i> GitHub profile page: <a href="https://github.com/${data.github}" target="_blank">${data.github}</a>`;
         roleIcon = `<i class="fas fa-people-carry"></i>`;
     } else if (data.getRole() === `Intern`){
         roleSpecific = `<i class="fas fa-graduation-cap"></i> School attending: ${data.school}`;
@@ -47,28 +44,27 @@ const addTeamMember = function (data) {
     }
     let cardContent =
         `
-    <div class="card col-3 m-5 px-auto text-center">
-        <div class="card-header">${roleIcon}${data.getRole()}</div>
-        <div class="card-body">
-            <h5 class="card-title">${data.name}</h5>
-            <ul class="list-group list-group-light list-group-small">
-                <li class="list-group-item px-4">Employee ID: ${data.id}</li>
-                <li class="list-group-item px-4">Employee Email: <a href="mailto:${data.email}">${data.email}</a> </li>
-                <li class="list-group-item px-4">${roleSpecific}</li>
-            </ul>
-        </div>
-    </div>
-    `;
+            <div class="card col-3 m-5 px-auto text-center">
+                <div class="card-header">${roleIcon}${data.getRole()}</div>
+                <div class="card-body">
+                    <h5 class="card-title">${data.name}</h5>
+                    <ul class="list-group list-group-light list-group-small">
+                        <li class="list-group-item px-4">Employee ID: ${data.id}</li>
+                        <li class="list-group-item px-4">Employee Email: <a href="mailto:${data.email}">${data.email}</a> </li>
+                        <li class="list-group-item px-4">${roleSpecific}</li>
+                    </ul>
+                </div>
+            </div>`;
     employeeDirectoryHtml += cardContent
 };
 const htmlEnding = function () {
     employeeDirectoryHtml += 
-    `
+    `    
+        </div>
     </main>
     </body>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.3.0/mdb.min.js"></script>
-    </html>
-    `;
+    </html>`;
     return employeeDirectoryHtml
 }
 
